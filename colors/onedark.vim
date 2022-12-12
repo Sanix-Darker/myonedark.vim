@@ -277,6 +277,15 @@ call s:h("SpellCap", { "fg": s:dark_yellow }) " Word that should start with a ca
 call s:h("SpellLocal", { "fg": s:dark_yellow }) " Word that is recognized by the spellchecker as one that is used in another region. This will be combined with the highlighting used otherwise.
 call s:h("SpellRare", { "fg": s:dark_yellow }) " Word that is recognized by the spellchecker as one that is hardly ever used. spell This will be combined with the highlighting used otherwise.
 call s:h("StatusLine", { "fg": s:white, "bg": s:cursor_grey }) " status line of current window
+
+" whichKey color specs
+call s:h("WhichKey", { "fg": s:white}) " status line of current window
+call s:h("WhichKeyFloat", { "fg": s:white}) " status line of current window
+call s:h("WhichKeyFloating", { "fg": s:white}) " status line of current window
+call s:h("WhichKeyDesc", { "fg": s:blue}) " status line of current window
+call s:h("WhichKeyGroup", { "fg": s:dark_red}) " status line of current window
+call s:h("WhichKeySeparator", { "fg": s:white}) " status line of current window
+
 call s:h("StatusLineNC", { "fg": s:comment_grey }) " status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 call s:h("StatusLineTerm", { "fg": s:white, "bg": s:cursor_grey }) " status line of current :terminal window
 call s:h("StatusLineTermNC", { "fg": s:comment_grey }) " status line of non-current :terminal window
@@ -714,13 +723,13 @@ endif
 " for transparent background
 function! AdaptColorscheme()
    " highlight clear CursorLine
-   highlight Normal ctermbg=none
-   highlight LineNr ctermbg=none
-   highlight Folded ctermbg=none
-   highlight NonText ctermbg=none
-   highlight SpecialKey ctermbg=none
-   highlight VertSplit ctermbg=none
-   highlight SignColumn ctermbg=none
+    highlight Normal ctermbg=none
+    highlight LineNr ctermbg=none
+    highlight Folded ctermbg=none
+    highlight NonText ctermbg=none
+    highlight SpecialKey ctermbg=none
+    highlight VertSplit ctermbg=none
+    highlight SignColumn ctermbg=none
 endfunction
 autocmd ColorScheme * call AdaptColorscheme()
 
@@ -738,3 +747,4 @@ highlight clear StatusLine
 autocmd InsertEnter * set nocursorline
 " Revert Color to default when leaving Insert Mode
 autocmd InsertLeave * set nocursorline
+
